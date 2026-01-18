@@ -1,8 +1,9 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { RestorationConfig } from "../types";
 
 export const restoreImage = async (
   base64Image: string,
-  config: any,
+  config: RestorationConfig,
   onProgress: (progress: number, status: string) => void
 ): Promise<string> => {
   const genAI = new GoogleGenerativeAI("AIzaSyBjg0qsF2HTngglxrCE75u3SHAXnzyJSg");
