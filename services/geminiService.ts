@@ -5,7 +5,6 @@ export const restoreImage = async (
   config: any,
   onProgress: any
 ): Promise<string> => {
-  // Chìa khóa của bạn đã được dán sẵn ở đây
   const genAI = new GoogleGenerativeAI("AIzaSyBjg0qsF2HTngglxrCE75u3SHAXnzyJSg");
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -22,4 +21,4 @@ export const restoreImage = async (
     console.error(error);
     throw error;
   }
-};
+}
