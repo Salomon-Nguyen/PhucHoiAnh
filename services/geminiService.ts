@@ -1,7 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export const restoreImage = async (base64Image: string): Promise<string> => {
-  // Dán mã API của bạn vào giữa hai dấu ngoặc kép dưới đây
   const genAI = new GoogleGenerativeAI("AIzaSyBjg0qsF2HTngglxrCE75u3SHAXnzyJSg");
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
