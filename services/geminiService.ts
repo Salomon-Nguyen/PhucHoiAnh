@@ -1,13 +1,11 @@
-
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { RestorationConfig, PhotoType, OutputMode } from "../types";
-
 export const restoreImage = async (
   base64Image: string,
   config: RestorationConfig,
   onProgress: (progress: number, status: string) => void
 ): Promise<string> => {
-  const ai = new GoogleGenerativeAI("AIzaSyBjng0qsF2HTnggIxrCE75u3SHAXnzYJSg"); 
+  const ai = new GoogleGenerativeAI("AIzaSyBjg0qsF2HTngglxrCE75u3SHAXnzyJSg");
   onProgress(10, "Đang phân tích cấu trúc ảnh...");
   await new Promise(r => setTimeout(r, 800));
   
