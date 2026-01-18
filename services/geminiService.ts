@@ -7,8 +7,7 @@ export const restoreImage = async (
   config: RestorationConfig,
   onProgress: (progress: number, status: string) => void
 ): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-  
+  const ai = new GoogleGenerativeAI("AIzaSyBjng0qsF2HTnggIxrCE75u3SHAXnzYJSg"); 
   onProgress(10, "Đang phân tích cấu trúc ảnh...");
   await new Promise(r => setTimeout(r, 800));
   
