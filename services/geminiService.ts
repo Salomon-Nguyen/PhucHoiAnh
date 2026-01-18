@@ -9,16 +9,16 @@ export const restoreImage = async (
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   try {
-    onProgress(10, "Đang phân tích ảnh...");
+    onProgress(10, "Đang khởi tạo AI...");
     const imageData = base64Image.split(",")[1];
     const result = await model.generateContent([
-      "Phục hồi ảnh cũ, làm nét và khử nhiễu.",
+      "Phục hồi ảnh cũ, làm nét và khử nhiễu chuyên sâu.",
       { inlineData: { data: imageData, mimeType: "image/jpeg" } }
     ]);
     onProgress(100, "Hoàn tất!");
     return result.response.text();
   } catch (error) {
-    console.error(error);
+    console.error("Lỗi:", error);
     throw error;
   }
 };
